@@ -22,19 +22,17 @@
       <div>
         <label for="types">Type</label>
         <select class="custom-select d-block w-100" id="types" name="selectType" [(ngModel)]="pet.type">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <ng-container *ngFor="let type of types">
+            <option value="{{type.type}}" >{{type.type}}</option>
+          </ng-container>
         </select>
       </div>
       <div>
         <label style="margin-top: 10px" for="colors">Fur color</label>
         <select class="custom-select d-block w-100" id="colors" name="selectColor" [(ngModel)]="pet.color">
-          <option selected>Choose...</option>
-          <option value="1">One</option>
-          <option value="2">Two</option>
-          <option value="3">Three</option>
+          <ng-container *ngFor="let color of colors">
+            <option value="{{color.color}}" >{{color.color}}</option>
+          </ng-container>
         </select>
       </div>
       <button type="submit" style="margin-top: 10px" [disabled]="!petForm.form.valid"
