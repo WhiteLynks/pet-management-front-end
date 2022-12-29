@@ -10,6 +10,7 @@
                placeholder="Enter pet name"
                required #name="ngModel">
       </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
       <div class="form-group">
         <label for="code">Code</label>
         <input type="text" [(ngModel)]="pet.code"
@@ -19,6 +20,7 @@
                placeholder="Enter pet code"
                required #code="ngModel">
       </div>
+      <div [hidden]="!code.pristine" class="alert alert-danger">Code is required</div>
       <div>
         <label for="types">Type</label>
         <select class="custom-select d-block w-100" id="types" name="selectType" [(ngModel)]="pet.type">
